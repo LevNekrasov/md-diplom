@@ -72,7 +72,7 @@
 	        </ul>
 	      </nav>
 	    </div>
-	    <h1 class="title">Блог о творчестве, спорте, <br>и образе жизни</h1>
+	    <h1 class="title">Блог о творчестве, спорте, и образе жизни</h1>
 	  </div>
 	</header>
 	<section class="trend">
@@ -80,35 +80,35 @@
 		<div class="trend-list">
 			<article class="trend-post trend-post1">
 				<div class="text-trend">
-					<ul class="tags-trend">
-						<li><a href="#0">lifestyle</a></li>
-						<li><a href="#0">interior</a></li>
+					<ul class="list-tags-trend">
+						<li class="tags-trend"><a href="#0">lifestyle</a></li>
+						<li class="tags-trend"><a href="#0">interior</a></li>
 					</ul>
 					<h2 class="title-trend"><a href="#0">Сейчас в тренде: сад  на подоконнике</a></h2>
 				</div>
 			</article>
 			<article class="trend-post trend-post2">
 				<div class="text-trend">
-					<ul class="tags-trend">
-						<li><a href="#0">food</a></li>
+					<ul class="list-tags-trend">
+						<li class="tags-trend"><a href="#0">food</a></li>
 					</ul>
 					<h2 class="title-trend"><a href="#0">сыры на красивых картинках из интернета: какие они на вкус?</a></h2>
 				</div>
 			</article>
 			<article class="trend-post trend-post3">
 				<div class="text-trend">
-					<ul class="tags-trend">
-						<li><a href="#0">lifestyle</a></li>
-						<li><a href="#0">travel</a></li>
+					<ul class="list-tags-trend">
+						<li class="tags-trend"><a href="#0">lifestyle</a></li>
+						<li class="tags-trend"><a href="#0">travel</a></li>
 					</ul>
 					<h2 class="title-trend"><a href="#0">собираемся в первый поход в горы</a></h2>
 				</div>
 			</article>
 			<article class="trend-post trend-post4">
 				<div class="text-trend">
-					<ul class="tags-trend">
-						<li><a href="#0">food</a></li>
-						<li><a href="#0">health</a></li>
+					<ul class="list-tags-trend">
+						<li class="tags-trend"><a href="#0">food</a></li>
+						<li class="tags-trend"><a href="#0">health</a></li>
 					</ul>
 					<h2 class="title-trend"><a href="#0">сейчас в тренде: сколько витаминов С в лимонах</a></h2>
 				</div>
@@ -241,7 +241,9 @@
 	      <form class="box-search" action="">
 	        <label class="visually-hidden" for="search-field">Поле поиска</label>
 	        <input class="field" id="search-field" type="search" placeholder="Найти...">
-	        <button class="button"></button>
+	        <button class="button">
+	        	<label class="visually-hidden">кнопка поиска</label>
+	        </button>
 	        </form>
 	        </section>
 	      <section class="mailing-block">
@@ -268,12 +270,30 @@
 	      <section class="topic-block">
 	        <h2 class="subtitle">темы</h2>
 	        <ul class="list-themes">
-	          <li class="themes"><a href="#0">Красота</a><sup>12</sup></li>
-	          <li class="themes"><a href="#0">Здоровье</a><sup>4</sup></li>
-	          <li class="themes"><a href="#0">Образ жизни</a><sup>145</sup></li>
-	          <li class="themes"><a href="#0">Музыка</a><sup>28</sup></li>
-	          <li class="themes"><a href="#0">Спорт</a><sup>62</sup></li>
-	          <li class="themes"><a href="#0">Йога</a><sup>8</sup></li>
+	          <li class="themes">
+	          	<a href="#0">Красота</a>
+	          	<span class="number-articles">12</span>
+	          </li>
+	          <li class="themes">
+	          	<a href="#0">Здоровье</a>
+	          	<span class="number-articles">4</span>
+	          </li>
+	          <li class="themes">
+	          	<a href="#0">Образ жизни</a>
+	          	<span class="number-articles">145</span>
+	          </li>
+	          <li class="themes">
+	          	<a href="#0">Музыка</a>
+	          	<span class="number-articles">28</span>
+	          </li>
+	          <li class="themes">
+	          	<a href="#0">Спорт</a>
+	          	<span class="number-articles">62</span>
+	          </li>
+	          <li class="themes">
+	          	<a href="#0">Йога</a>
+	          	<span class="number-articles">8</span>
+	          </li>
 	        </ul>
 	      </section>
 	    </aside>
@@ -282,7 +302,19 @@
 			<h2 class="subtitle">наши изделия</h2>
 			<div class="shop-list">
 				<article class="shop-post">
-					<div class="img-shop img-shop1"></div>
+					<picture class="picture-shop">
+						<source 
+							media="(max-width: 640px)"
+							srcset="img/shop-item-mobile1.jpg">
+						<source 
+							media="(min-width: 641px) and (max-width: 1200px)"
+							srcset="img/shop-item-tablet1.jpg">
+						<source 
+							media="(min-width: 1201px)"
+							srcset="img/shop-item-desk1.jpg">		
+						<img class="img-shop" 
+							srcset="img/shop-item-mobile1.jpg">
+					</picture>			
 					<div class="shop-price">
 						<h2 class="shop-title">Подушки на диван</h2>
 						<p class="shop-text">Набор из двух подушек с модными принтами. Видео о создании <a class="shop-link" href="#0">здесь</a>.</p>
@@ -296,7 +328,19 @@
 					</div>
 				</article>
 				<article class="shop-post">
-					<div class="img-shop img-shop2"></div>
+					<picture class="picture-shop">
+						<source 
+							media="(max-width: 640px)"
+							srcset="img/shop-item-mobile2.jpg">
+						<source 
+							media="(min-width: 641px) and (max-width: 1200px)"
+							srcset="img/shop-item-tablet2.jpg">
+						<source 
+							media="(min-width: 1201px)"
+							srcset="img/shop-item-desk2.jpg">		
+						<img class="img-shop" 
+							srcset="img/shop-item-mobile2.jpg">
+					</picture>
 					<div class="shop-price">
 						<h2 class="shop-title">Кукла «Зайчик»</h2>
 						<p class="shop-text">Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена <a class="shop-link" href="#0">весенняя серия постов</a> в блоге и несколько подкастов.</p>
@@ -310,7 +354,19 @@
 					</div>
 				</article>
 				<article class="shop-post shop-end">
-					<div class="img-shop img-shop3"></div>
+					<picture class="picture-shop">
+						<source 
+							media="(max-width: 640px)"
+							srcset="img/shop-item-mobile3.jpg">
+						<source 
+							media="(min-width: 641px) and (max-width: 1200px)"
+							srcset="img/shop-item-tablet3.jpg">
+						<source 
+							media="(min-width: 1201px)"
+							srcset="img/shop-item-desk3.jpg">		
+						<img class="img-shop" 
+							srcset="img/shop-item-mobile3.jpg">
+					</picture>
 					<div class="shop-price">
 						<h2 class="shop-title">Шестиугольная рамка</h2>
 						<p class="shop-text">Необычная рамка для украшения дома из видео <a class="shop-link" href="#0">«Как сделать рамку из подручных средств за 30 минут»</a></p>
@@ -330,15 +386,15 @@
 	  <div class="container">
 	    <div class="icon-list">
 	      <ul class="link-icons">
-	        <li>
+	        <li class="icon">
 	          <a class="img-icon img-icon-dribbble" href="#0">
 	            <span class="visually-hidden">Профиль компании в dribbble</span></a>
 	        </li>
-	        <li>
+	        <li class="icon">
 	          <a class="img-icon img-icon-pinterest" href="#0">
 	            <span class="visually-hidden">Профиль компании в pinterest</span></a>
 	        </li>
-	        <li>
+	        <li class="icon">
 	          <a class="img-icon img-icon-tumblr" href="#0">
 	            <span class="visually-hidden">Профиль компании в tumblr</span></a>
 	        </li>

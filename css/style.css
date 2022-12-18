@@ -56,10 +56,20 @@ body {
 
 .form-x {
   border: none;
-  padding: 0;  
+  padding: 0;
+  background-image: url(../svg/form-x.svg);
+  background-repeat: no-repeat;  
+  background-position: center;
+  background-color: transparent;
+  cursor: pointer;
+  width: 27px;
+  height: 27px;
+  position: fixed;
+  top: -35px;
+  right: 0;  
 }
 
-.form-x:before {
+/*.form-x:before {
   content: '';  
   background-image: url(../svg/form-x.svg);
   background-repeat: no-repeat;  
@@ -69,7 +79,7 @@ body {
   position: absolute;
   top: -35px;
   right: 0;
-}
+}*/
 
 .popup { 
   position: fixed; 
@@ -85,7 +95,7 @@ body {
 
 
 .popup-container {
-  margin: -10px 25px 30px;  
+  margin: 50px 25px 30px;  
 }
 
 .popup-text {
@@ -173,15 +183,20 @@ body {
   text-align: center;
 }
 
-.button-popup:hover{
+.button-popup:hover {
   background-color: #323232;
-  width: 100%;
-  margin: -15px 0 30px 0;
+}
+
+@media (max-width: 640px) {
+  .button-popup:hover {
+    width: 100%;
+    margin: -15px 0 30px 0;
+}  
 }
 
 .header {
   width: 100%; 
-  min-height: 640px;
+/*  min-height: 640px;*/
   margin-bottom: 44px;
   background-color: #000000;
   background-image: url(../img/banner-mobile.jpg);
@@ -189,7 +204,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: -2;
+  z-index: 0;
 }
 
 .header:before,
@@ -203,7 +218,7 @@ body {
   right: 0;
   bottom: 0;
   background-color:rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  z-index: 1;
 }
 
 .container {
@@ -216,11 +231,12 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
   width: 270px;
-  height: 60px;
   margin-top: 175px;
 }
 
@@ -285,8 +301,7 @@ body {
 }
 
 .menu-list {
-  display: flex;
-  display: none;  
+  display: none;
 }
 
 .title {
@@ -296,7 +311,9 @@ body {
   line-height: 36px;
   color: #fff;
   text-align: center;
-  margin-top: 42px;  
+  margin-top: 42px;
+  position: relative;  
+  z-index: 2;
 }
 
 .trend {
@@ -339,7 +356,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: -2;  
+  z-index: 0;  
 }
 
 @media (orientation: landscape) {
@@ -377,10 +394,15 @@ body {
   border: 3px solid #b59f5b;
   margin: auto 15px 15px 15px;
   padding: 30px 20px;
-  width: 100%;  
+  width: 100%;
+  position: relative;  
+  z-index: 2;
 }
 
-.tags-trend {
+.tags-trend + .tags-trend {
+  margin-left: 15px;  
+}
+.list-tags-trend{
   display: flex;
   color: #b59f5b;
   font-weight: 700;
@@ -389,11 +411,7 @@ body {
   margin-bottom: 10px;  
 }
 
-.tags-trend a {
-  margin-right: 20px;  
-}
-
-.tags-trend a:hover {
+.tags-trend:hover {
   text-decoration: underline;
   color: #b59f5b;
 }
@@ -407,7 +425,7 @@ body {
   line-height: 20px;  
 }
 
-.title-trend a:hover{
+.title-trend:hover {
   color: #b59f5b;
 }
 
@@ -435,8 +453,7 @@ body {
 
 
 .img {
-  width: 100%;  
-  min-height: 250px;  
+  width: 100%;    
 }
 
 .tags-post {
@@ -512,7 +529,6 @@ body {
 .img-aside{
   background-color: #f4f7f6;
   width: 70px;
-  height: 70px;
 }
 
 .aside-text{
@@ -646,11 +662,6 @@ body {
   border: 3px solid #b59f5b;
 }
 
-.list-themes{
-  display: flex;
-  flex-direction:column;
-}
-
 .themes{
   width: 100%;
   border:1px solid #eeeeee;
@@ -670,8 +681,8 @@ body {
   color: #b59f5b;
 }
 
-sup{
-  margin-left: 5px;
+.number-articles {
+  vertical-align: super;  
   font-weight: 700;
   font-size: 12px;
   color: #b59f5b;
@@ -679,7 +690,8 @@ sup{
 
 .shop-post {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 25px;
   width: 100%;
@@ -689,32 +701,23 @@ sup{
   margin-bottom: 0;  
 }
 
+.picture-shop {
+  width: 87%;  
+}
+
+
 .img-shop {
-  width: 87%;
-  min-height: 280px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-}
-
-.img-shop1 {
-  background-image: url(../img/shop-item-mobile1.jpg);  
-}
-
-.img-shop2 {
-  background-image: url(../img/shop-item-mobile2.jpg);
-}
-
-.img-shop3 {
-  background-image: url(../img/shop-item-mobile3.jpg);
+  width: 100%  
 }
 
 .shop-price {
-  width: 100%;
-  min-height: 260px;  
+  width: 100%;  
   border: 3px solid #d3c59d; 
   margin-top: -30px;
-  padding: 0 23px; 
+  padding: 0 23px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
 }
 
 .shop-title {
@@ -722,7 +725,7 @@ sup{
   font-weight: 700;
   font-size: 17px;
   text-transform: uppercase;
-  padding-top: 50px;
+  padding-top: 30px;
   margin: 0 0 7px 0;
 }
 
@@ -792,16 +795,20 @@ sup{
   justify-content: center;
   background-color: #f4f7f6;
   margin-top: 64px;
+  padding: 30px 0;
 }
 .link-icons {
   display: flex;
+}
+
+.icon {
+  margin-right: 15px;  
 }
 
 .img-icon {
   display: block;
   height: 21px;
   width: 21px;
-  margin: 30px 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -835,9 +842,9 @@ sup{
   }
 
   .header {
-    min-width: 641px;
-    max-width: 1200px;
-    min-height: 390px;
+    /*min-width: 641px;
+    max-width: 1200px;*/
+/*    min-height: 390px;*/
     background-image: url(../img/banner-bg-tablet.jpg);
   }
 
@@ -855,8 +862,6 @@ sup{
   .logo {
     margin: 0;
     width: 157px;
-    height: 36px;
-
   }
 
   .menu {
@@ -943,22 +948,6 @@ sup{
   margin-bottom: 0;  
   }
 
-  .img-shop {
-    min-height: 225px;
-  }
-
-  .img-shop1 {
-  background-image: url(../img/shop-item-desk1.jpg);  
-  }
-
-  .img-shop2 {
-  background-image: url(../img/shop-item-desk2.jpg);
-  }
-
-  .img-shop3 {
-  background-image: url(../img/shop-item-desk3.jpg);
-  }
-
   .footer {
     margin-top: 45px;
   }
@@ -970,8 +959,9 @@ sup{
   }
 
   .header {
-    min-width: 1201px;
-    min-height: 450px;
+   /* min-width: 1201px;
+    min-height: 450px;*/
+    padding: 30px 0 120px 0;
     margin-bottom: 63px;
     background-image: url(../img/banner-bg.jpg);
   }
@@ -984,15 +974,12 @@ sup{
 
   .header-inner {
     flex-direction: row;
-    padding-top: 30px;
     justify-content: space-between;
   }
 
   .logo {
     margin: 0;
     width: 180px;
-    height: 40px;
-
   }
 
   .menu {
@@ -1072,12 +1059,9 @@ sup{
 
   .img {
     width: 381px;
-    height: 294px;
   }
 
   .text-post {
-    display: flex;
-    flex-direction: column;
     margin-left: 30px;
   }
 
@@ -1122,21 +1106,5 @@ sup{
   .shop-post {
     width: 30%;
     margin: 0;
-  }
-
-  .img-shop1 {
-  background-image: url(../img/shop-item-tablet1.jpg);  
-  }
-
-  .img-shop2 {
-  background-image: url(../img/shop-item-tablet2.jpg);
-  }
-
-  .img-shop3 {
-  background-image: url(../img/shop-item-tablet3.jpg);
-  }
-
-  .img-shop {
-    min-height: 200px;
   }
 }
